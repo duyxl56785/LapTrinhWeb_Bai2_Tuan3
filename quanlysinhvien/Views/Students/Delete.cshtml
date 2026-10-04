@@ -1,0 +1,31 @@
+﻿@model StudentManagement.Models.Student
+
+@{
+    ViewData["Title"] = "Xóa Sinh viên";
+}
+
+<h2 class="text-danger">Xác nhận xóa Sinh viên</h2>
+<h4>Bạn có chắc chắn muốn xóa sinh viên này không?</h4>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.StudentCode)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.StudentCode)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FullName)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.FullName)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Major)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Major)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Gpa)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Gpa)</dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Xóa vĩnh viễn" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-secondary">Hủy bỏ</a>
+</form>
